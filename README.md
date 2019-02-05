@@ -1,4 +1,4 @@
-# 524_py_marcelle_paul_socorro
+# Audio Filters for Python
 Python project for sound convolutions
 
 ### Contributors
