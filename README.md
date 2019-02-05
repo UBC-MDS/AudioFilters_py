@@ -12,4 +12,4 @@ Python project for sound convolutions
 ### Functions
 
 
-### R Ecosystem
+### Phyton Ecosystem
