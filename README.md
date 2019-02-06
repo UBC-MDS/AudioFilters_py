@@ -1,4 +1,3 @@
-
 # Audio Filters for Python
 
 Python project for sound convolutions
