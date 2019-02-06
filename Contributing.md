@@ -13,7 +13,7 @@ Go to the main respository [here](https://github.com/UBC-MDS/AudioFilters_R).
 
 On the right top corner, click on the `Fork` button.
 
-![](img/01_Fork.png)
+![](Img/01_Fork.png)
 
 Go to your forked version of this respository.
 Clone that repository using the commands:
@@ -23,7 +23,7 @@ git clone
 ```
 And add your sash key.
 You can find this key under the Green Clone or Download button:
-![](img/02_Key.png)
+![](Img/02_Key.png)
 
 Once you cloned your respository, set up the original repository as the upstream master. Do this from the terminal using the following commands:
 
@@ -45,7 +45,7 @@ If you want to update your forked version, use `git push` to send the new change
 When you want to submit new work that you developed, you must push all your changes to your forked version. Then, please send a `pull request`. 
 
 To do this, in your forked version, on the `Pulls` tab, click on the `Pull Request` option.
-![](img/03_PushRequest.png)
+![](Img/03_PushRequest.png)
 
 Follow the instructions the screen will give you. We will review your `Pull Request` once we receive it. Either of the contributors has full authority to merge changes and make adjustments as neccessary.
 
