@@ -18,4 +18,7 @@ This function changes the audio speed, speeding up or down an audio signal.
 ###### add_reverb
 This function applies an effect to an audio signal so that it sounds like it was recorded in a different environment.
 
-### Phyton Ecosystem
+###### high_pass_filter
+This function uses convolution to attenuate a 1-D (audio) signal signal for frequencies above a specified cutoff level.
+
+### Python Ecosystem
