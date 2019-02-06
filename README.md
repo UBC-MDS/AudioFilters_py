@@ -12,8 +12,13 @@ Python project for sound convolutions
 
 ### Functions
 
+###### change_speed
+This function changes the audio speed, speeding up or down an audio signal.
+
+###### add_reverb
+This function applies an effect to an audio signal so that it sounds like it was recorded in a different environment.
+
 ###### high_pass_filter
-This function uses convolution to attenuate a 1-D (audio) signal signal for frequencies above a specified cutoff level. 
+This function uses convolution to attenuate a 1-D (audio) signal signal for frequencies above a specified cutoff level.
 
 ### Python Ecosystem
-
