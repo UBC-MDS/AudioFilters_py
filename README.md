@@ -1,4 +1,3 @@
-
 # Audio Filters for Python
 
 Python project for sound convolutions
@@ -13,6 +12,8 @@ Python project for sound convolutions
 
 ### Functions
 
+###### high_pass_filter
+This function uses convolution to attenuate a 1-D (audio) signal signal for frequencies above a specified cutoff level. 
 
-### Phyton Ecosystem
+### Python Ecosystem
 
