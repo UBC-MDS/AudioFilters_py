@@ -10,7 +10,7 @@ def high_pass_filter(input_signal, cutoff_frequency):
 
     Returns
     -------
-    numpy.array representing the audio signal with frequencies below the cut off attenuated
+    numpy.array representing the audio signal with frequencies below the cut off attenuated by 24 db.
 
     """
 
