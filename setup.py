@@ -6,5 +6,5 @@ setup(
     packages=['AudioFilters',],
     license='',
     long_description=open('README.md').read(),
-    scripts=['AudioFilters/high_pass_filter.py'],
+    scripts=['AudioFilters/low_pass_filter.py'],
 )
