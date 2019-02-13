@@ -17,7 +17,9 @@ def add_reverb(input_signal, type = 'hall'):
     numpy.array representing the audio signal with the specified type of reverb applied.
 
     """
-    
+
+    # Check the reverb type and get the corresponding impulse response file.
+    # If the type is not 'hall' or 'church', raise an error.
     if type == "hall":
         impulse_response = np.genfromtxt('audiofilters/impulse_responses/impulse_hall.csv', dtype = 'float32')
     elif type == "church":
@@ -25,4 +27,5 @@ def add_reverb(input_signal, type = 'hall'):
     else:
         raise Exception('{} reverb type not supported'.format(type))
 
+    # Convolve the input_signal with the impulse_response to get the vector with reverb applied.
     return np.convolve(input_signal, impulse_response)
