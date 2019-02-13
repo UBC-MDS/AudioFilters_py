@@ -1,3 +1,5 @@
+import numpy as np
+
 def add_reverb(input_signal, type = 'hall'):
     """Add a reverb effect to the audio signal, simulating a different recording environment
 
@@ -15,4 +17,12 @@ def add_reverb(input_signal, type = 'hall'):
     numpy.array representing the audio signal with the specified type of reverb applied.
 
     """
-    return []
+    
+    if type == "hall":
+        impulse_response = np.genfromtxt('audiofilters/impulse_responses/impulse_hall.csv', dtype = 'float32')
+    elif type == "church":
+        impulse_response = np.genfromtxt('audiofilters/impulse_responses/impulse_church.csv', dtype = 'float32')
+    else:
+        raise Exception('{} reverb type not supported'.format(type))
+
+    return np.convolve(input_signal, impulse_response)
