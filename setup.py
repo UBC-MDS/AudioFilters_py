@@ -7,5 +7,4 @@ setup(
     license='',
     long_description=open('README.md').read(),
     scripts=['AudioFilters/high_pass_filter.py'],
-
 )
