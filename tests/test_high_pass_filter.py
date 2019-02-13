@@ -2,7 +2,7 @@
 
 import numpy as np
 import pytest
-from audiofilters.high_pass_filter import high_pass_filter
+from AudioFilters.high_pass_filter import high_pass_filter
 
 input_signal = np.genfromtxt('data/bark.csv', dtype = 'float32')
 
