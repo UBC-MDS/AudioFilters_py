@@ -11,6 +11,3 @@ def test_high_pass_filter_attenuates_frequencies_below_1000_cutoff():
     output_signal = high_pass_filter(input_signal, 1000)
 
     assert np.array_equal(output_signal, expected_output), "Output does not match expected output!"
-
-# TND: is this where the test is supposed to be triggered?
-test_high_pass_filter_attenuates_frequencies_below_1000_cutoff()
