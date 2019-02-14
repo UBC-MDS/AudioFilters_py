@@ -12,5 +12,6 @@ def test_low_pass_filter_attenuates_frequencies_below_1000_cutoff():
 
     # Mean squared error between input and output signal
     mse = ((expected_output - output_signal)**2).mean(axis=0)
+    print(mse)
 
-    assert mse < 0.01, "Output does not match test data!"
+    assert mse < 0.00001, "Output does not match test data!"
