@@ -22,8 +22,8 @@ This function changes the audio speed, speeding up or down an audio signal.
 ###### add_reverb
 This function applies an effect to an audio signal so that it sounds like it was recorded in a different environment.
 
-###### high_pass_filter
-This function attenuates audio frequencies below a specified cutoff level.
+###### low_pass_filter
+This function attenuates audio frequencies above a specified cutoff level.
 
 ### Python Ecosystem
 
