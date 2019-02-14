@@ -15,6 +15,9 @@ def low_pass_filter(input_signal, cutoff_frequency):
     numpy.array representing the audio signal with frequencies above the cut off attenuated by 24 db.
 
     """
+    if cutoff_frequency <= 0:
+        raise Exception('cutoff frequency must be a positive number')
+
     cf = cutoff_frequency/44100 # 44100 assumed for sampling rate of input_signal
     trans_bandwidth = 0.08
     # N = int(np.ceil((4 / trans_bandwidth)))
