@@ -7,7 +7,7 @@ from AudioFilters.low_pass_filter import low_pass_filter
 input_signal = np.genfromtxt('data/bark.csv', dtype = 'float32')
 
 def test_low_pass_filter_attenuates_frequencies_below_1000_cutoff():
-    expected_output = np.genfromtxt('data/lowpass/bark_lowpass_1000Hz_24db.csv', dtype = 'float32')
+    expected_output = np.genfromtxt('data/lowpass/bark_lowpass_1000Hz.csv', dtype = 'float32')
     output_signal = low_pass_filter(input_signal, 1000)
 
     # Mean squared error between input and output signal
