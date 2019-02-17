@@ -14,7 +14,19 @@ Have you ever wondered how you could edit your audio files using filters to spee
 
 This package performs audio processing on .wav files. It contains functions which apply 1D convolutions using a simple kernel array to do some interesting transformations on the original audios, such as: changing their speed, applying effects and attenuating the signal for specified frequencies.
 
-### Functions
+### Installation Instructions
+
+In order to install the package, run the following command from terminal:
+
+`pip install git+https://github.com/UBC-MDS/AudioFilters_py`
+
+Then, import the functions that you need.
+
+The package has the following dependencies:
+- librosa
+- numpy
+
+### Package Functions
 
 ###### change_speed
 This function changes the audio speed, speeding up or down an audio signal.
