@@ -31,13 +31,13 @@ def low_pass_filter(input_signal, cutoff_frequency):
     #window = -trans_bandwidth * np.cos(2 * np.pi * wndow_grid / 49) + 0.08 * np.cos(4 * np.pi * wndow_grid / 49)
 
     # Multiply the sinc filter and window
-    hp_filter = sinc_filter * window
+    lp_filter = sinc_filter * window
 
     # Normalize
-    hp_filter = hp_filter / np.sum(hp_filter)
+    lp_filter = lp_filter / np.sum(lp_filter)
 
     # Apply the filter to the input signal
-    output_signal = np.convolve(input_signal, hp_filter)
+    output_signal = np.convolve(input_signal, lp_filter)
 
     return(output_signal)
 
