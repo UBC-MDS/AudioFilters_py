@@ -52,7 +52,7 @@ signal_attenuated_above_880 = low_pass_filter(input_signal, 880)
 
 With a vector read from [input.wav](examples/input.wav) as input:
 
-- [Result of applying low pass filter using 880 as the cuttoff frequency](examples/filtered_880.wav)
+- [Result of applying low pass filter using 880 as the cuttoff frequency](examples/output_filtered_880.wav)
 
 ##### Reverb
 
