@@ -14,6 +14,46 @@ Have you ever wondered how you could edit your audio files using filters to spee
 
 This package performs audio processing on .wav files. It contains functions which apply 1D convolutions using a simple kernel array to do some interesting transformations on the original audios, such as: changing their speed, applying effects and attenuating the signal for specified frequencies.
 
+### Usage
+
+All three functions expect a numpy array of integers or floats as the input_signal and can be used as follows:
+
+##### Change speed
+
+```
+from audiofilters.change_speed import change_speed
+
+# Use a number greater than one to speed up the file
+signal_faster = change_speed(input_signal, 2)
+
+# Use a number between 0 and 1 to slow down the file
+signal_slower = change_speed(input_signal_norm, 0.5)
+```
+
+##### Low Pass Filters
+
+```
+from audiofilters.low_pass_filter import low_pass_filter
+
+# Use 1000 as the cutoff_frequency to attenuate all frequencies above that
+signal_attenuated_above_1000 = low_pass_filter(input_signal, 1000)
+```
+
+##### Reverb
+
+```
+from audiofilters.reverb import add_reverb
+
+# Use 'hall' to add a reverb effect that simulates a hall-like recording environment
+hall_reverb = add_reverb(input_signal, 'hall')
+
+# Use 'church' to add a reverb effect that simulates a church-like recording environment
+church_reverb = add_reverb(input_signal, 'church')
+```
+
+
+
+
 ### Installation Instructions
 
 In order to install the package, run the following command from terminal:
