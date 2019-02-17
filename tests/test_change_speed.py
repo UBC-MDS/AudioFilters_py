@@ -9,7 +9,7 @@ Test that exception is raised for unsupported input_signal argument type.
 '''
 def test_unsupported_input_signal_type_raises_error():
     with pytest.raises(Exception):
-        change_speed(['1', '2', '3'], 1.5)
+        change_speed(np.array(['1', '2', '3']), 1.5)
 
 '''
 Test that exception is raised for negative rate argument
