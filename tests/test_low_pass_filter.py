@@ -39,3 +39,4 @@ def test_low_pass_filter_attenuates_frequencies_below_1000_cutoff():
     print(mse)
 
     assert mse < 0.00001, "Output does not match test data!"
+    

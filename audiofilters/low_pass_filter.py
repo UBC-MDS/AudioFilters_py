@@ -12,7 +12,7 @@ def low_pass_filter(input_signal, cutoff_frequency):
 
     Returns
     -------
-    numpy.array representing the audio signal with frequencies above the cut off attenuated by 24 db.
+    numpy.array representing the audio signal with frequencies above the cut off attenuated.
 
     """
 
@@ -23,7 +23,7 @@ def low_pass_filter(input_signal, cutoff_frequency):
     # Raise error if cutoff_frequency is not positive
     if cutoff_frequency <= 0:
         raise Exception('cutoff frequency must be a positive number')
-
+    
     cf = cutoff_frequency/44100 # 44100 assumed for sampling rate of input_signal
     trans_bandwidth = 0.08
     # N = int(np.ceil((4 / trans_bandwidth)))
@@ -37,10 +37,10 @@ def low_pass_filter(input_signal, cutoff_frequency):
     #window = -trans_bandwidth * np.cos(2 * np.pi * wndow_grid / 49) + 0.08 * np.cos(4 * np.pi * wndow_grid / 49)
 
     # Multiply the sinc filter and window
-    hp_filter = sinc_filter * window
+    lp_filter = sinc_filter * window
 
     # Normalize
-    hp_filter = hp_filter / np.sum(hp_filter)
+    lp_filter = lp_filter / np.sum(lp_filter)
 
     # Convert input signal to a -1.0 to 1.0 float if it's an integer type
     if input_signal.dtype.kind in 'iu':
@@ -50,7 +50,7 @@ def low_pass_filter(input_signal, cutoff_frequency):
         input_signal =  (input_signal.astype('float32') - offset) / abs_max
 
     # Apply the filter to the input signal
-    output_signal = np.convolve(input_signal, hp_filter)
+    output_signal = np.convolve(input_signal, lp_filter)
 
     return(output_signal)
 
