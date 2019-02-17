@@ -6,7 +6,7 @@ def low_pass_filter(input_signal, cutoff_frequency):
     Parameters
     ----------
     input_signal : numpy.array
-        Input array, must have float32 type.
+        Input array, must have numerical type.
     cutoff_frequency : numeric
         Cutoff frequency of the low pass filter.
 
@@ -15,6 +15,12 @@ def low_pass_filter(input_signal, cutoff_frequency):
     numpy.array representing the audio signal with frequencies above the cut off attenuated by 24 db.
 
     """
+
+    # Raise error if input_signal is of an unsupported type
+    if input_signal.dtype.kind not in 'iu' and input_signal.dtype.kind != 'f' :
+        raise TypeError("'input_signal' must be an array of integers or floats")
+
+    # Raise error if cutoff_frequency is not positive
     if cutoff_frequency <= 0:
         raise Exception('cutoff frequency must be a positive number')
 
@@ -35,6 +41,13 @@ def low_pass_filter(input_signal, cutoff_frequency):
 
     # Normalize
     hp_filter = hp_filter / np.sum(hp_filter)
+
+    # Convert input signal to a -1.0 to 1.0 float if it's an integer type
+    if input_signal.dtype.kind in 'iu':
+        i = np.iinfo('float32')
+        abs_max = 2 ** (i.bits - 1)
+        offset = i.min + abs_max
+        input_signal =  (input_signal.astype('float32') - offset) / abs_max
 
     # Apply the filter to the input signal
     output_signal = np.convolve(input_signal, hp_filter)
