@@ -7,11 +7,18 @@ from audiofilters.low_pass_filter import low_pass_filter
 input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 
 '''
-Test that exception is raised for invalid cutoff_frequency argument.
+Test that exception is raised for invalid zero cutoff_frequency argument.
 '''
-def cutoff_zero():
+def test_cutoff_zero_raises_error():
     with pytest.raises(Exception):
-        low_pass_filter(input_signal, 1)
+        low_pass_filter(input_signal, 0)
+
+'''
+Test that exception is raised for invalid negative cutoff_frequency argument.
+'''
+def test_cutoff_negative_raises_error():
+    with pytest.raises(Exception):
+        low_pass_filter(input_signal, -1)
 
 '''
 Make sure the output matches example data
