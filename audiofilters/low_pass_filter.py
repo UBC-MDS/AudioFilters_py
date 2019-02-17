@@ -12,11 +12,17 @@ def low_pass_filter(input_signal, cutoff_frequency):
 
     Returns
     -------
-    numpy.array representing the audio signal with frequencies above the cut off attenuated by 24 db.
+    numpy.array representing the audio signal with frequencies above the cut off attenuated.
 
     """
+    
+    # Validate inputs
     if cutoff_frequency <= 0:
         raise Exception('cutoff frequency must be a positive number')
+    try:
+        isinstance(input_signal[0], np.float64)
+    except TypeError:
+        print("Input must be a float64 numpy array")
 
     cf = cutoff_frequency/44100 # 44100 assumed for sampling rate of input_signal
     trans_bandwidth = 0.08
