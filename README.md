@@ -41,16 +41,18 @@ With a vector read from [input.wav](examples/input.wav) as input:
 
 - [Result of halving the speed](examples/output_slower.wav)
 
-
 ##### Low Pass Filters
 
 ```
 from audiofilters.low_pass_filter import low_pass_filter
 
-# Use 1000 as the cutoff_frequency to attenuate all frequencies above that
-signal_attenuated_above_1000 = low_pass_filter(input_signal, 1000)
+# Use 880 as the cutoff_frequency to attenuate all frequencies above that
+signal_attenuated_above_880 = low_pass_filter(input_signal, 880)
 ```
 
+With a vector read from [input.wav](examples/input.wav) as input:
+
+- [Result of applying low pass filter using 880 as the cuttoff frequency](examples/filtered_880.wav)
 
 ##### Reverb
 
@@ -69,6 +71,7 @@ With a vector read from [input.wav](examples/input.wav) as input:
 - [Result of applying hall reverb](examples/output_reverb_hall.wav)
 
 - [Result of applying church reverb](examples/output_reverb_church.wav)
+
 
 ### Installation Instructions
 
