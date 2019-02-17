@@ -12,7 +12,7 @@ Python project for sound convolutions
 
 Have you ever wondered how you could edit your audio files using filters to speed them up to save some time or maybe speed them down to listen more carefully? The purpose of this project is to create a package to address this kind of need, and it's also possible to go even deeper.
 
-This package performs audio processing on .wav files. It contains functions which apply 1D convolutions using a simple kernel array to do some interesting transformations on the original audios, such as: changing their speed, applying effects and attenuating the signal for specified frequencies.
+This package performs audio processing on vectors read from .wav files. It contains functions which apply 1D convolutions using a simple kernel array to do some interesting transformations on the original audios, such as applying a reverb effect and filtering by the sound frequencies. Additionally, another function implements the ability to change the playback speed without affecting the original pitch.
 
 ### Usage
 
