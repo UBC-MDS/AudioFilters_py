@@ -3,7 +3,10 @@ from distutils.core import setup
 setup(
     name='AudioFilters',
     version='0.1dev',
-    packages=['audiofilters',],
+    author=['Marcelle Chiriboga', 'Paul Vial', 'Socorro Dominguez'],
+    packages=['audiofilters'],
     license='',
-    long_description=open('README.md').read(),
+    description='This package provides functions that add effects to vectors read from audio files.',
+    url='https://github.com/UBC-MDS/AudioFilters_py',
+    install_requires=['numpy', 'librosa']
 )
