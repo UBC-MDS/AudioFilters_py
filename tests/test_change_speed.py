@@ -6,6 +6,13 @@ input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 
 
 '''
+Test that exception is raised for unsupported input_signal argument type.
+'''
+def test_unsupported_input_signal_type_raises_error():
+    with pytest.raises(Exception):
+        change_speed(['1', '2', '3'], 1.5)
+
+'''
 Test that exception is raised for negative rate argument
 '''
 def test_negative_rate_raises_error():
