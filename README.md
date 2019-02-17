@@ -1,6 +1,9 @@
+
+<img src="/img/logo.png" width="300" align="right">
+
 # Audio Filters for Python
 
-Python project for sound convolutions
+Python project for sound convolutions.
 
 ### Contributors
 
@@ -8,17 +11,19 @@ Python project for sound convolutions
 - [Paul Vial](https://github.com/Pall-v)
 - [Socorro Dominguez](https://github.com/sedv8808)
 
+
 ### Overview
 
 Have you ever wondered how you could edit your audio files using filters to speed them up to save some time or maybe speed them down to listen more carefully? The purpose of this project is to create a package to address this kind of need, and it's also possible to go even deeper.
 
 This package performs audio processing on vectors read from .wav files. It contains functions which apply 1D convolutions using a simple kernel array to do some interesting transformations on the original audios, such as applying a reverb effect and filtering by the sound frequencies. Additionally, another function implements the ability to change the playback speed without affecting the original pitch.
 
+
 ### Usage
 
 All three functions expect a numpy array of integers or floats as the input_signal and can be used as follows:
 
-##### Change speed
+##### Change Speed
 
 ```
 from audiofilters.change_speed import change_speed
@@ -51,9 +56,6 @@ hall_reverb = add_reverb(input_signal, 'hall')
 church_reverb = add_reverb(input_signal, 'church')
 ```
 
-
-
-
 ### Installation Instructions
 
 In order to install the package, run the following command from terminal:
@@ -65,6 +67,7 @@ Then, import the functions that you need.
 The package has the following dependencies:
 - librosa
 - numpy
+
 
 ### Package Functions
 
