@@ -2,3 +2,4 @@
 /tests/__pycache__
 /.pytest_cache
 .Rhistory
+tests/data/.DS_Store

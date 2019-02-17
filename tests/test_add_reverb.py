@@ -8,7 +8,7 @@ input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 Test that exception is raised for unsupported input_signal argument type.
 '''
 def test_unsupported_input_signal_type_raises_error():
-    with pytest.raises(Exception):
+    with pytest.raises(TypeError):
         add_reverb(['1', '2', '3'], 'hall')
 
 '''
