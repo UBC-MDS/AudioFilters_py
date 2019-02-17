@@ -9,7 +9,14 @@ Test that TypeError is raised for invalid input_signal argument.
 '''
 def signal_format():
     with pytest.raises(TypeError):
-        low_pass_filter(123, 1)
+        add_reverb(123, 1)
+
+'''
+Test that exception is raised for an invalid type argument.
+'''
+def type_invalid():
+    with pytest.raises(Exception):
+        add_reverb(input_signal, "testTESTtest")
 
 '''
 Make sure the output matches example data for hall reverb

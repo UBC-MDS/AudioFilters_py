@@ -5,11 +5,25 @@ from audiofilters.change_speed import change_speed
 input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 
 '''
+Test that exception is raised for 0 as a rate argument.
+'''
+def cutoff_zero():
+    with pytest.raises(Exception):
+        change_speed(input_signal, 0)
+
+'''
+Test that exception is raised for a negative rate argument.
+'''
+def cutoff_zero():
+    with pytest.raises(Exception):
+        change_speed(input_signal, -10000)
+
+'''
 Test that TypeError is raised for invalid input_signal argument.
 '''
 def signal_format():
     with pytest.raises(TypeError):
-        low_pass_filter(123, 1)
+        change_speed(123, 1)
 
 '''
 Make sure the output matches example data when speed is increased
