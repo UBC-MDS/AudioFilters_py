@@ -4,6 +4,13 @@ from audiofilters.change_speed import change_speed
 
 input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 
+'''
+Test that TypeError is raised for invalid input_signal argument.
+'''
+def signal_format():
+    with pytest.raises(TypeError):
+        low_pass_filter(123, 1)
+
 def test_change_speed_doubles_playback_speed():
     expected_output = np.genfromtxt('tests/data/change_speed/bark_double_speed.csv', dtype = 'float32')
     output_signal = change_speed(input_signal, 2.0)

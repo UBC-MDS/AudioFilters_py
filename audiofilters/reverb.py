@@ -17,6 +17,12 @@ def add_reverb(input_signal, type = 'hall'):
     numpy.array representing the audio signal with the specified type of reverb applied.
 
     """
+    
+    # Validate input signal
+    try:
+        isinstance(input_signal[0], np.float64)
+    except TypeError:
+        print("Input must be a float64 numpy array")
 
     # Check the reverb type and get the corresponding impulse response file.
     # If the type is not 'hall' or 'church', raise an error.

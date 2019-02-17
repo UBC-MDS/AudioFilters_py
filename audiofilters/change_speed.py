@@ -19,6 +19,12 @@ def change_speed(input_signal, rate):
 
     """
 
+        # Validate input signal
+    try:
+        isinstance(input_signal[0], np.float64)
+    except TypeError:
+        print("Input must be a float64 numpy array")
+        
     if rate <= 0:
         raise Exception('rate must be a positive number')
 

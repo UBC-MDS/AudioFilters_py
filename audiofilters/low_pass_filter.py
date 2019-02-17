@@ -19,6 +19,7 @@ def low_pass_filter(input_signal, cutoff_frequency):
     # Validate inputs
     if cutoff_frequency <= 0:
         raise Exception('cutoff frequency must be a positive number')
+    
     try:
         isinstance(input_signal[0], np.float64)
     except TypeError:
