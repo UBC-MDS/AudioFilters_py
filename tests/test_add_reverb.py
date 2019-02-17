@@ -12,7 +12,7 @@ def signal_format():
         low_pass_filter(123, 1)
 
 '''
-Make sure the output matches example data
+Make sure the output matches example data for hall reverb
 '''
 def test_hall_reverb_is_applied_correctly():
     expected_output = np.genfromtxt('tests/data/reverb/bark_hall.csv', dtype = 'float32')
@@ -21,7 +21,7 @@ def test_hall_reverb_is_applied_correctly():
     assert np.array_equal(output_signal, expected_output)
 
 '''
-Make sure the output matches example data
+Make sure the output matches example data for church reverb
 '''
 def test_church_reverb_is_applied_correctly():
     expected_output = np.genfromtxt('tests/data/reverb/bark_church.csv', dtype = 'float32')
