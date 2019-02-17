@@ -7,7 +7,7 @@ def change_speed(input_signal, rate):
     Parameters
     ----------
     input_signal : numpy.array
-        Input array, must have float32 type.
+        Input array, must have numerical type.
     rate : numeric
         Desired rate of change to the speed.
         To increase the speed, pass in a value greater than 1.0.
@@ -19,14 +19,18 @@ def change_speed(input_signal, rate):
 
     """
 
-    # Validate input signal
-    try:
-        isinstance(input_signal[0], np.float64)
-    except TypeError:
-        print("Input must be a float64 numpy array")
+    if input_signal.dtype.kind not in 'iu' and input_signal.dtype.kind != 'f' :
+        raise TypeError("'input_signal' must be an array of integers or floats")
 
     if rate <= 0:
         raise Exception('rate must be a positive number')
+
+    # Convert input signal to a -1.0 to 1.0 float if it's an integer type
+    if input_signal.dtype.kind in 'iu':
+        i = np.iinfo('float32')
+        abs_max = 2 ** (i.bits - 1)
+        offset = i.min + abs_max
+        input_signal =  (input_signal.astype('float32') - offset) / abs_max
 
     # Transform signal to frequency domain
     frequency_domain_signal = core.stft(input_signal)

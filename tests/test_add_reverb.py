@@ -5,18 +5,18 @@ from audiofilters.reverb import add_reverb
 input_signal = np.genfromtxt('tests/data/bark.csv', dtype = 'float32')
 
 '''
-Test that TypeError is raised for invalid input_signal argument.
+Test that exception is raised for unsupported input_signal argument type.
 '''
-def signal_format():
-    with pytest.raises(TypeError):
-        add_reverb(123, 1)
+def test_unsupported_input_signal_type_raises_error():
+    with pytest.raises(Exception):
+        add_reverb(['1', '2', '3'], 'hall')
 
 '''
-Test that exception is raised for an invalid type argument.
+Test that exception is raised for invalid type argument.
 '''
-def type_invalid():
+def test_unsupported_reverb_type_raises_error():
     with pytest.raises(Exception):
-        add_reverb(input_signal, "testTESTtest")
+        add_reverb(input_signal, 'unsupported_reverb_type')
 
 '''
 Make sure the output matches example data for hall reverb
