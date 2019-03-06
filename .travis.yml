@@ -12,5 +12,4 @@ install:
 
 # command to run tests
 script:
-  - cd tests/
-  - pytest
+  - pytest tests/
