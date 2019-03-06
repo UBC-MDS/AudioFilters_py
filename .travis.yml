@@ -7,9 +7,7 @@ cache: pip3
 install:
   - pip install git+https://github.com/UBC-MDS/AudioFilters_py@master
   - pip install -U pytest
-  - pip install numpy
-  - pip install librosa
-
+  
 # command to run tests
 script:
   - pytest tests/
