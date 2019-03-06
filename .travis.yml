@@ -6,7 +6,6 @@ cache: pip3
 
 install:
   - pip install git+https://github.com/UBC-MDS/AudioFilters_py@master
-  - pip install -r requirements.txt
   - pip install -U pytest
   - pip install numpy
   - pip install librosa
