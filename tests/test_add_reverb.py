@@ -25,7 +25,11 @@ def test_hall_reverb_is_applied_correctly():
     expected_output = np.genfromtxt('tests/data/reverb/bark_hall.csv', dtype = 'float32')
     output_signal = add_reverb(input_signal, 'hall')
 
-    assert np.array_equal(output_signal, expected_output)
+    # Mean squared error between input and output signal
+    mse = ((expected_output - output_signal)**2).mean(axis=0)
+    print(mse)
+
+    assert mse < 0.00001, "Output does not match test data!"
 
 '''
 Make sure the output matches example data for church reverb
@@ -34,4 +38,8 @@ def test_church_reverb_is_applied_correctly():
     expected_output = np.genfromtxt('tests/data/reverb/bark_church.csv', dtype = 'float32')
     output_signal = add_reverb(input_signal, 'church')
 
-    assert np.array_equal(output_signal, expected_output)
+    # Mean squared error between input and output signal
+    mse = ((expected_output - output_signal)**2).mean(axis=0)
+    print(mse)
+
+    assert mse < 0.00001, "Output does not match test data!"
