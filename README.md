@@ -3,6 +3,8 @@
 
 # Audio Filters for Python
 
+[![Build Status](https://travis-ci.org/UBC-MDS/AudioFilters_py.svg?branch=master)](https://travis-ci.org/UBC-MDS/AudioFilters_py)
+
 Python project for sound convolutions.
 
 ### Contributors
